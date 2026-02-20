@@ -3,202 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tradition Look | Boutique de Mode Marocaine</title>
+    <title>Tradition Look | Boutique de Mode</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #d4af37;
-            --dark-green: #004d40;
-            --light-beige: #f5f5dc;
-            --text-color: #333;
+            --accent: #bfa37e; /* Couleur Or/Bronze */
+            --dark: #121212;
+            --light: #ffffff;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #fff;
+            background-color: var(--light);
+            color: var(--dark);
         }
 
-        header {
-            background-color: var(--light-beige);
-            text-align: center;
-            padding: 40px 20px;
-            border-bottom: 3px solid var(--gold);
-        }
-
-        header h1 {
-            color: var(--gold);
-            margin: 0;
-            font-size: 2.5em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('votre-image-principale.jpg') center/cover;
-            height: 400px;
+        /* Barre de navigation */
+        nav {
+            padding: 30px 5%;
             display: flex;
-            align-items: center;
             justify-content: center;
-            color: white;
+            align-items: center;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        /* Section Hero */
+        .hero {
             text-align: center;
+            padding: 80px 10%;
+            background: #fbfbfb;
         }
 
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 40px 0;
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 400;
         }
 
-        .about {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .about h2 {
-            color: var(--gold);
-            border-bottom: 2px solid var(--gold);
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        .products {
+        /* Grille des Produits (Vos Photos) */
+        .collection-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
         }
 
         .product-card {
-            border: 1px solid #ddd;
-            padding: 10px;
+            position: relative;
+            background: #fff;
             text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover {
-            transform: scale(1.05);
-            border-color: var(--gold);
         }
 
         .product-card img {
             width: 100%;
-            height: auto;
+            height: 90vh; /* Hauteur élégante */
+            object-fit: cover;
+            display: block;
         }
 
-        .swot-section {
-            background-color: #f9f9f9;
-            padding: 40px 20px;
-            margin-top: 40px;
-        }
-
-        .swot-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .swot-box {
+        .product-details {
             padding: 20px;
-            border-radius: 5px;
-            color: white;
         }
 
-        .strengths { background-color: #2e7d32; }
-        .weaknesses { background-color: #c62828; }
-        .opportunities { background-color: #1565c0; }
-        .threats { background-color: #ef6c00; }
+        .product-details h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin: 5px 0;
+        }
+
+        .label {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        /* Section Histoire (Inspirée du Business Plan) */
+        .about-section {
+            padding: 100px 15%;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .about-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
 
         footer {
-            background: var(--dark-green);
+            background: var(--dark);
             color: white;
+            padding: 50px 5%;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
+            font-size: 13px;
         }
 
-        .btn-contact {
-            background-color: var(--gold);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 20px;
+        @media (max-width: 768px) {
+            .collection-grid { grid-template-columns: 1fr; }
+            .product-card img { height: 70vh; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>TRADITION LOOK</h1>
-    <p>Boutique de Mode - Tradition & Modernité</p>
-</header>
+    <nav>
+        <div class="logo">TRADITION LOOK</div>
+    </nav>
 
-<section class="hero">
-    <div>
-        <h1>Élégance Traditionnelle Marocaine</h1>
-        <p>Djellabas, Caftans et Takchitas d'exception</p>
+    <section class="hero">
+        <p style="letter-spacing: 3px; font-size: 12px;">BOUTIQUE DE MODE</p>
+        <h1>Tradition & Modernité</h1>
+    </section>
+
+    <div class="collection-grid">
+        <div class="product-card">
+            <img src="1000107018.jpg" alt="Caftan Bleu Tradition Look">
+            <div class="product-details">
+                <span class="label">Haute Couture</span>
+                <h3>Caftan Bleu Royal</h3>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="1000105563.jpg" alt="Caftan Gris Tradition Look">
+            <div class="product-details">
+                <span class="label">Collection Moderne</span>
+                <h3>Caftan Gris Perle & Velours</h3>
+            </div>
+        </div>
     </div>
-</section>
 
-<div class="container">
-    <section class="about">
-        <h2>Notre Projet</h2>
-        <p>Tradition Look est une boutique spécialisée dans la vente de vêtements traditionnels marocains. [span_0](start_span)Nous combinons l'authenticité de l'artisanat avec un style moderne[span_0](end_span).</p>
+    <section class="about-section">
+        <h2>L'Art du Caftan</h2>
+        <p>
+            Tradition Look propose des vêtements traditionnels modernes et élégants, 
+            [span_2](start_span)adaptés aux cérémonies comme les mariages et fêtes religieuses[span_2](end_span). 
+            [span_3](start_span)Notre projet repose sur l'authenticité et la mise en valeur du patrimoine culturel marocain[span_3](end_span).
+        </p>
     </section>
 
-    <section class="about">
-        <h2>Nos Créations</h2>
-        <div class="products">
-            <div class="product-card">
-                <div style="background:#eee; height:300px; display:flex; align-items:center; justify-content:center;">Image Caftan Bleu</div>
-                <h3>Caftan de Luxe Bleu</h3>
-                [span_1](start_span)[span_2](start_span)<p>Broderies artisanales et finitions élégantes[span_1](end_span)[span_2](end_span).</p>
-            </div>
-            <div class="product-card">
-                <div style="background:#eee; height:300px; display:flex; align-items:center; justify-content:center;">Image Caftan Vert</div>
-                <h3>Takchita Moderne Verte</h3>
-                [span_3](start_span)[span_4](start_span)<p>Mélange parfait entre tradition et design contemporain[span_3](end_span)[span_4](end_span).</p>
-            </div>
-            <div class="product-card">
-                <div style="background:#eee; height:300px; display:flex; align-items:center; justify-content:center;">Image Caftan Gris</div>
-                <h3>Djellaba Stylisée</h3>
-                [span_5](start_span)<p>Tissus de haute qualité et confort absolu[span_5](end_span).</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="swot-section">
-        <h2 style="text-align:center;">Pourquoi nous choisir ?</h2>
-        <div class="swot-grid">
-            <div class="swot-box strengths">
-                <h3>Nos Forces</h3>
-                <ul>
-                    [span_6](start_span)<li>Vêtements authentiques et uniques[span_6](end_span)</li>
-                    [span_7](start_span)<li>Expertise dans les tissus et broderies[span_7](end_span)</li>
-                </ul>
-            </div>
-            <div class="swot-box opportunities">
-                <h3>Opportunités</h3>
-                <ul>
-                    [span_8](start_span)<li>E-commerce national et international[span_8](end_span)</li>
-                    [span_9](start_span)<li>Collaborations avec des influenceurs[span_9](end_span)</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section style="text-align:center;">
-        <a href="#" class="btn-contact">Contactez-nous sur WhatsApp</a>
-    </section>
-</div>
-
-<footer>
-    <p>&copy; [span_10](start_span)2026 Tradition Look - Réalisé par Nouha Lourik & Rania Talmi[span_10](end_span)</p>
-</footer>
+    <footer>
+        [span_4](start_span)<p>Rapport réalisé par Nouha Lourik & Rania Talmi[span_4](end_span)</p>
+        <p>&copy; 2026 Tradition Look - Tous droits réservés</p>
+    </footer>
 
 </body>
 </html>
